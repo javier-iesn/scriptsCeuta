@@ -74,7 +74,7 @@ CICLO="$1"
    CLAVE2=$(echo $L | awk '{print $3;}')
    eCLAVE1=$(openssl passwd $CLAVE1)
    eCLAVE2=$(openssl passwd $CLAVE2)
-   echo ssh $PC "sudo usermod -p $eCLAVE1 ciclomedio" &
-   echo ssh $PC "sudo usermod -p $eCLAVE2 ciclosuperior" &
-   #echo "PC: $PC. CLAVE1: $CLAVE1. CLAVE2: $CLAVE2"
+   ssh $PC "sudo usermod -p $eCLAVE1 ciclomedio" &
+   ssh $PC "sudo usermod -p $eCLAVE2 ciclosuperior" &
+   ##echo "PC: $PC. CLAVE1: $CLAVE1. CLAVE2: $CLAVE2"
 done
