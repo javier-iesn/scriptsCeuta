@@ -12,10 +12,11 @@ read GRUPO
 #while repite una serie de instrucciones mientras se de una condición
 CORREO=""
 while [ "$CORREO" != "FIN" ]; do
+   echo "Introduce nombre del usuario (ej.: Pepe Pérez):" > /dev/stderr
+   read  NOMBRE
+   if [ "$NOMBRE" = "FIN" ]; then break; fi
    echo "Introduce dirección de correo: " > /dev/stderr
    read CORREO
-   if [ "$CORREO" != "FIN" ]; then
-      echo "${CORREO}@gmail.com,${CORREO}@gmail.com,,,,,,,,,,,,,,,,,,,,,,,,,* My Contacts ::: $GRUPO ::: * Starred"
-   fi
+   echo "${NOMBRE},${CORREO}@gmail.com,,,,,,,,,,,,,,,,,,,,,,,,,* My Contacts ::: $GRUPO ::: * Starred"
 done
 
