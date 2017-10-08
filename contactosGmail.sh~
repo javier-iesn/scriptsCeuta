@@ -11,7 +11,7 @@ read -p "GRUPO: " GRUPO
 #while repite una serie de instrucciones mientras se de una condición
 while true; do
    read -p "NOMBRE: " NOMBRE
-   if [ "$( echo $NOMBRE | awk '{print toupper($0);}')" = "FIN" ]; then break; fi
+   if [ "$( echo $CORREO | awk '{print toupper($0);}')" = "FIN" ]; then break; fi
    read -p "APELL1: " AP1
    read -p "APELL2: " AP2
    read -p "EMAIL : " EMAIL
